@@ -61,6 +61,13 @@ export function AppSidebar() {
   const session = authClient.useSession();
   const pathname = usePathname();
 
+  const clinicInitials =
+    session.data?.user?.clinic?.name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase() || "";
+
   const handleSignOut = async () => {
     await authClient.signOut({
       fetchOptions: {
@@ -100,8 +107,8 @@ export function AppSidebar() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton size="lg">
-                  <Avatar>
-                    <AvatarFallback>R</AvatarFallback>
+                  <Avatar className="items-center justify-center border">
+                    <AvatarFallback>{clinicInitials}</AvatarFallback>
                   </Avatar>
                   <div>
                     <p className="text-sm">
