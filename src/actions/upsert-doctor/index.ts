@@ -41,6 +41,7 @@ export const upsertDoctor = actionClient
     if (!session?.user.clinic?.id) {
       throw new Error("Clinic not found");
     }
+
     await db
       .insert(doctorsTable)
       .values({
