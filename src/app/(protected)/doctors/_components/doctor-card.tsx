@@ -56,7 +56,7 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
         </Badge>
         <Badge variant="outline">
           <ClockIcon className="mr-1" />
-          {availability.from.format("HH:mm")} as{" "}
+          {availability.from.format("HH:mm")} às{" "}
           {availability.to.format("HH:mm")}
         </Badge>
         <Badge variant="outline">
