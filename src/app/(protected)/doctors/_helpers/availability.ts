@@ -18,7 +18,7 @@ export const getAvailability = (doctor: typeof doctorsTable.$inferSelect) => {
     .local();
   const to = dayjs()
     .utc()
-    .day(doctor.availableFromWeekDay)
+    .day(doctor.availableToWeekDay)
     .set("hour", Number(doctor.availableToTime.split(":")[0]))
     .set("minute", Number(doctor.availableToTime.split(":")[1]))
     .set("second", Number(doctor.availableToTime.split(":")[2] || 0))
