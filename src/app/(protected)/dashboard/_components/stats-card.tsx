@@ -15,7 +15,7 @@ interface StatsCardsProps {
   totalDoctors: number;
 }
 
-const StatsCards = ({
+const StatsCard = ({
   totalRevenue,
   totalAppointments,
   totalPatients,
@@ -68,4 +68,4 @@ const StatsCards = ({
   );
 };
 
-export default StatsCards;
+export default StatsCard;
