@@ -17,7 +17,7 @@ export default function TopDoctors({ doctors }: TopDoctorsProps) {
   return (
     <Card className="mx-auto w-full">
       <CardContent>
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Stethoscope className="text-muted-foreground" />
             <CardTitle className="text-base">Médicos</CardTitle>
@@ -25,7 +25,7 @@ export default function TopDoctors({ doctors }: TopDoctorsProps) {
         </div>
 
         {/* Doctors List */}
-        <div className="space-y-6">
+        <div className="space-y-5">
           {doctors.map((doctor) => (
             <div key={doctor.id} className="flex items-center justify-between">
               <div className="flex items-center gap-4">
