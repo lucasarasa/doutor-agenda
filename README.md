@@ -2,6 +2,7 @@
 
 <div align="center">
   <h3>Sistema completo para gestão de clínicas médicas com agendamentos, autenticação segura e pagamentos integrados</h3>
+  <img src="./public/doctor_agenda.png" alt="Doutor Agenda - Capa do Projeto" width="800"/>
   
   [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://nextjs.org/)
   [![React](https://img.shields.io/badge/React-19-blue?logo=react&logoColor=white)](https://reactjs.org/)
