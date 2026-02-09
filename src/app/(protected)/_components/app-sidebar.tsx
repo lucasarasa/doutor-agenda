@@ -8,6 +8,7 @@ import {
 } from "@radix-ui/react-dropdown-menu";
 import {
   CalendarDays,
+  EllipsisVertical,
   Gem,
   LayoutDashboard,
   LogOut,
@@ -122,27 +123,28 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
-          <SidebarMenuItem>
+          <SidebarMenuItem className="flex items-center text-center">
+            <SidebarMenuButton size="lg">
+              <Avatar className="items-center justify-center border">
+                <AvatarFallback>{clinicInitials}</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="text-sm">{session.data?.user?.clinic?.name}</p>
+                <p className="text-muted-foreground text-sm">
+                  {session.data?.user?.email}
+                </p>
+              </div>
+            </SidebarMenuButton>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <SidebarMenuButton size="lg">
-                  <Avatar className="items-center justify-center border">
-                    <AvatarFallback>{clinicInitials}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="text-sm">
-                      {session.data?.user?.clinic?.name}
-                    </p>
-                    <p className="text-muted-foreground text-sm">
-                      {session.data?.user?.email}
-                    </p>
-                  </div>
-                </SidebarMenuButton>
+                <div className="cursor-pointer">
+                  <EllipsisVertical width={18} height={18} />
+                </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent className="mb-2 rounded-md bg-white shadow-md">
                 <DropdownMenuItem
                   onClick={handleSignOut}
-                  className="flex gap-2 p-3"
+                  className="flex cursor-pointer gap-2 p-3"
                 >
                   <LogOut />
                   Sair
