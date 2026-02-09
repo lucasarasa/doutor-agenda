@@ -16,6 +16,7 @@ import { db } from "@/db";
 import { appointmentsTable, doctorsTable, patientsTable } from "@/db/schema";
 import { auth } from "@/lib/auth";
 
+import { Breadcrumb } from "../_components/breadcrumb";
 import AddAppointmentButton from "./_components/add-appointment-button";
 import { appointmentsTableColumns } from "./_components/table-columns";
 
@@ -50,6 +51,12 @@ const AppointmentsPage = async () => {
 
   return (
     <PageContainer>
+      <Breadcrumb
+        items={[
+          { label: "Menu Principal", href: "/" },
+          { label: "Agendamentos" },
+        ]}
+      />
       <PageHeader>
         <div className="space-y-3 md:flex md:w-full md:items-center md:justify-between md:space-y-0">
           <PageHeaderContent>

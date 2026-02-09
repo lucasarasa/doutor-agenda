@@ -15,6 +15,7 @@ import { db } from "@/db";
 import { doctorsTable } from "@/db/schema";
 import { auth } from "@/lib/auth";
 
+import { Breadcrumb } from "../_components/breadcrumb";
 import AddDoctorButton from "./_components/add-doctor-button";
 import DoctorCard from "./_components/doctor-card";
 
@@ -36,6 +37,9 @@ const DoctorsPage = async () => {
   });
   return (
     <PageContainer>
+      <Breadcrumb
+        items={[{ label: "Menu Principal", href: "/" }, { label: "Médicos" }]}
+      />
       <PageHeader>
         <div className="space-y-3 md:flex md:w-full md:items-center md:justify-between md:space-y-0">
           <PageHeaderContent>

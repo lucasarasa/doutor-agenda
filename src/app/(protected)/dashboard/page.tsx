@@ -17,6 +17,7 @@ import {
 import { getDashboard } from "@/data/get-dashboard";
 import { auth } from "@/lib/auth";
 
+import { Breadcrumb } from "../_components/breadcrumb";
 import { appointmentsTableColumns } from "../appointments/_components/table-columns";
 import AppointmentsChart from "./_components/appointments-chart";
 import { DatePicker } from "./_components/date-picker";
@@ -74,6 +75,9 @@ const DashboardPage = async ({ searchParams }: DashboardPageProps) => {
 
   return (
     <PageContainer>
+      <Breadcrumb
+        items={[{ label: "Menu Principal", href: "/" }, { label: "Dashboard" }]}
+      />
       <PageHeader>
         <div className="space-y-3 md:flex md:w-full md:items-center md:justify-between md:space-y-0">
           <PageHeaderContent>

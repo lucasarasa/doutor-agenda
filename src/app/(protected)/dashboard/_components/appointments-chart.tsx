@@ -76,7 +76,7 @@ const AppointmentsChart = ({
         </CardDescription>
       </CardHeader>
       <CardContent className="p-0 md:px-6">
-        <ChartContainer config={chartConfig} className="h-40 w-full md:h-60">
+        <ChartContainer config={chartConfig} className="h-40 w-full md:h-52">
           <AreaChart
             data={chartData}
             margin={{ top: 20, right: 30, left: 20, bottom: 5 }}

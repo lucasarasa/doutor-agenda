@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/page-container";
 import { auth } from "@/lib/auth";
 
+import { Breadcrumb } from "../_components/breadcrumb";
 import { SubscriptionPlan } from "./_components/subscription-plan";
 
 const SubscriptionPage = async () => {
@@ -25,6 +26,12 @@ const SubscriptionPage = async () => {
   }
   return (
     <PageContainer>
+      <Breadcrumb
+        items={[
+          { label: "Outros", href: "/subscription" },
+          { label: "Assinatura" },
+        ]}
+      />
       <PageHeader>
         <PageHeaderContent>
           <PageTitle>Assinatura</PageTitle>
