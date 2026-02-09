@@ -75,8 +75,8 @@ const AppointmentsChart = ({
           Mostrando o total de agendamentos e faturamento dos últimos 21 dias
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig} className="h-60 w-full">
+      <CardContent className="p-0 md:px-6">
+        <ChartContainer config={chartConfig} className="h-40 w-full md:h-60">
           <AreaChart
             data={chartData}
             margin={{ top: 20, right: 30, left: 20, bottom: 5 }}

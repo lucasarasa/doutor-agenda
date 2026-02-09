@@ -37,13 +37,17 @@ const DoctorsPage = async () => {
   return (
     <PageContainer>
       <PageHeader>
-        <PageHeaderContent>
-          <PageTitle>Médicos</PageTitle>
-          <PageDescription>Gerencie os médicos da sua clínica</PageDescription>
-        </PageHeaderContent>
-        <PageActions>
-          <AddDoctorButton />
-        </PageActions>
+        <div className="space-y-3 md:flex md:w-full md:items-center md:justify-between md:space-y-0">
+          <PageHeaderContent>
+            <PageTitle>Médicos</PageTitle>
+            <PageDescription>
+              Gerencie os médicos da sua clínica
+            </PageDescription>
+          </PageHeaderContent>
+          <PageActions>
+            <AddDoctorButton />
+          </PageActions>
+        </div>
       </PageHeader>
       <PageContent>
         <div className="grid grid-cols-3 gap-6">

@@ -51,15 +51,17 @@ const AppointmentsPage = async () => {
   return (
     <PageContainer>
       <PageHeader>
-        <PageHeaderContent>
-          <PageTitle>Agendamentos</PageTitle>
-          <PageDescription>
-            Gerencie os agendamentos da sua clínica
-          </PageDescription>
-        </PageHeaderContent>
-        <PageActions>
-          <AddAppointmentButton patients={patients} doctors={doctors} />
-        </PageActions>
+        <div className="space-y-3 md:flex md:w-full md:items-center md:justify-between md:space-y-0">
+          <PageHeaderContent>
+            <PageTitle>Agendamentos</PageTitle>
+            <PageDescription>
+              Gerencie os agendamentos da sua clínica
+            </PageDescription>
+          </PageHeaderContent>
+          <PageActions>
+            <AddAppointmentButton patients={patients} doctors={doctors} />
+          </PageActions>
+        </div>
       </PageHeader>
       <PageContent>
         <DataTable data={appointments} columns={appointmentsTableColumns} />

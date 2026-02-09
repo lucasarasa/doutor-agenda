@@ -38,15 +38,17 @@ const PatientsPage = async () => {
   return (
     <PageContainer>
       <PageHeader>
-        <PageHeaderContent>
-          <PageTitle>Pacientes</PageTitle>
-          <PageDescription>
-            Gerencie os pacientes da sua clínica
-          </PageDescription>
-        </PageHeaderContent>
-        <PageActions>
-          <AddPatientButton />
-        </PageActions>
+        <div className="space-y-3 md:flex md:w-full md:items-center md:justify-between md:space-y-0">
+          <PageHeaderContent>
+            <PageTitle>Pacientes</PageTitle>
+            <PageDescription>
+              Gerencie os pacientes da sua clínica
+            </PageDescription>
+          </PageHeaderContent>
+          <PageActions>
+            <AddPatientButton />
+          </PageActions>
+        </div>
       </PageHeader>
       <PageContent>
         <DataTable data={patients} columns={patientsTableColumns} />
