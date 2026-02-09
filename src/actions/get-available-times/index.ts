@@ -86,13 +86,17 @@ export const getAvailableTimes = actionClient
       let isAvailable = !appointmentsOnSelectedDate.includes(time);
 
       // Se for o dia atual, verificar se o horário já passou
-      const isToday = dayjs(parsedInput.date).isSame(dayjs(), "day");
+      const isToday = dayjs(parsedInput.date).isSame(
+        dayjs().tz("America/Sao_Paulo"),
+        "day",
+      );
       if (isToday && isAvailable) {
         const timeSlot = dayjs()
+          .tz("America/Sao_Paulo")
           .set("hour", Number(time.split(":")[0]))
           .set("minute", Number(time.split(":")[1]))
           .set("second", 0);
-        const now = dayjs();
+        const now = dayjs().tz("America/Sao_Paulo");
         isAvailable = timeSlot.isAfter(now);
       }
 
