@@ -60,15 +60,20 @@ export const getAvailableTimes = actionClient
     const timeSlots = generateTimeSlots();
 
     const doctorAvailableFrom = dayjs()
+      .utc()
       .set("hour", Number(doctor.availableFromTime.split(":")[0]))
       .set("minute", Number(doctor.availableFromTime.split(":")[1]))
-      .set("second", 0);
+      .set("second", 0)
+      .local();
     const doctorAvailableTo = dayjs()
+      .utc()
       .set("hour", Number(doctor.availableToTime.split(":")[0]))
       .set("minute", Number(doctor.availableToTime.split(":")[1]))
-      .set("second", 0);
+      .set("second", 0)
+      .local();
     const doctorTimeSlots = timeSlots.filter((time) => {
       const date = dayjs()
+        .utc()
         .set("hour", Number(time.split(":")[0]))
         .set("minute", Number(time.split(":")[1]))
         .set("second", 0);
@@ -78,22 +83,9 @@ export const getAvailableTimes = actionClient
       );
     });
     return doctorTimeSlots.map((time) => {
-      let isAvailable = !appointmentsOnSelectedDate.includes(time);
-
-      // Se for o dia atual, verificar se o horário já passou
-      const isToday = dayjs(parsedInput.date).isSame(dayjs(), "day");
-      if (isToday && isAvailable) {
-        const timeSlot = dayjs()
-          .set("hour", Number(time.split(":")[0]))
-          .set("minute", Number(time.split(":")[1]))
-          .set("second", 0);
-        const now = dayjs();
-        isAvailable = timeSlot.isAfter(now);
-      }
-
       return {
         value: time,
-        available: isAvailable,
+        available: !appointmentsOnSelectedDate.includes(time),
         label: time.substring(0, 5),
       };
     });
