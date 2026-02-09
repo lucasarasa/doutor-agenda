@@ -15,6 +15,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "dr.agenda",
   description: "Gerenciador de consultas médicas simples e eficiente.",
+  icons: {
+    icon: "/doctor_agenda_logo.png",
+  },
 };
 
 export default function RootLayout({
