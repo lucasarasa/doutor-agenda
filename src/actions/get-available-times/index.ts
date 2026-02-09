@@ -60,20 +60,18 @@ export const getAvailableTimes = actionClient
     const timeSlots = generateTimeSlots();
 
     const doctorAvailableFrom = dayjs()
-      .utc()
+      .tz("America/Sao_Paulo")
       .set("hour", Number(doctor.availableFromTime.split(":")[0]))
       .set("minute", Number(doctor.availableFromTime.split(":")[1]))
-      .set("second", 0)
-      .local();
+      .set("second", 0);
     const doctorAvailableTo = dayjs()
-      .utc()
+      .tz("America/Sao_Paulo")
       .set("hour", Number(doctor.availableToTime.split(":")[0]))
       .set("minute", Number(doctor.availableToTime.split(":")[1]))
-      .set("second", 0)
-      .local();
+      .set("second", 0);
     const doctorTimeSlots = timeSlots.filter((time) => {
       const date = dayjs()
-        .utc()
+        .tz("America/Sao_Paulo")
         .set("hour", Number(time.split(":")[0]))
         .set("minute", Number(time.split(":")[1]))
         .set("second", 0);
