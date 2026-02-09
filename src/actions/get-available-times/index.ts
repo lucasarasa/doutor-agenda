@@ -83,9 +83,22 @@ export const getAvailableTimes = actionClient
       );
     });
     return doctorTimeSlots.map((time) => {
+      let isAvailable = !appointmentsOnSelectedDate.includes(time);
+
+      // Se for o dia atual, verificar se o horário já passou
+      const isToday = dayjs(parsedInput.date).isSame(dayjs(), "day");
+      if (isToday && isAvailable) {
+        const timeSlot = dayjs()
+          .set("hour", Number(time.split(":")[0]))
+          .set("minute", Number(time.split(":")[1]))
+          .set("second", 0);
+        const now = dayjs();
+        isAvailable = timeSlot.isAfter(now);
+      }
+
       return {
         value: time,
-        available: !appointmentsOnSelectedDate.includes(time),
+        available: isAvailable,
         label: time.substring(0, 5),
       };
     });
